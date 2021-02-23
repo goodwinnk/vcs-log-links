@@ -1,0 +1,20 @@
+<idea-plugin>
+    <id>com.nkrasko.log-extracts</id>
+    <name>Log Extracts</name>
+    <vendor email="nikolay.krasko@gmail.com">Nikolay Krasko</vendor>
+
+    <description>
+        This plugins shows advanced information in VCS log
+    </description>
+
+    <!-- please see https://plugins.jetbrains.com/docs/intellij/plugin-compatibility.html
+         on how to target different products -->
+    <depends>com.intellij.modules.platform</depends>
+
+    <extensions defaultExtensionNs="com.intellij">
+        <vcsLogCustomColumn implementation="com.nkrasko.extracts.idea.plugin.IssuesCustomColumn"/>
+    </extensions>
+
+    <actions>
+    </actions>
+</idea-plugin>
