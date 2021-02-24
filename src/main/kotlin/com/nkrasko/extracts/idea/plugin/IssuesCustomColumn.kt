@@ -16,7 +16,7 @@ import javax.swing.table.TableCellRenderer
 
 @Suppress("UnstableApiUsage")
 class IssuesCustomColumn : VcsLogCustomColumn<GraphCommitCell> {
-    override val id: String = "com.nkrasko.extracts.idea.plugin.ExtractsCustomColumn"
+    override val id: String = javaClass.canonicalName
     override val isDynamic: Boolean = true
     override val localizedName: String = VcsBundle.message("issue.link.issue.column")
 
