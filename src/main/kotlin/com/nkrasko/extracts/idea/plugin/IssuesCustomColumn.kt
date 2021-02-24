@@ -18,7 +18,7 @@ import javax.swing.table.TableCellRenderer
 class IssuesCustomColumn : VcsLogCustomColumn<GraphCommitCell> {
     override val id: String = "com.nkrasko.extracts.idea.plugin.ExtractsCustomColumn"
     override val isDynamic: Boolean = true
-    override val localizedName: String = VcsBundle.message("issue.link.link.column")
+    override val localizedName: String = VcsBundle.message("issue.link.issue.column")
 
     override fun createTableCellRenderer(table: VcsLogGraphTable): TableCellRenderer {
         val graphCellPainter: GraphCellPainter = object : SimpleGraphCellPainter(DefaultColorGenerator()) {
