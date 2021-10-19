@@ -32,11 +32,10 @@ tasks.withType<org.jetbrains.intellij.tasks.PatchPluginXmlTask> {
     )
 
     setSinceBuild("203.0")
-    setUntilBuild("211.*")
+    setUntilBuild("230.*")
 }
 
 allprojects {
-    //Support @JvmDefault
     tasks.withType<KotlinCompile>().configureEach {
         kotlinOptions {
             freeCompilerArgs = listOf("-Xjvm-default=enable")
