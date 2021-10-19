@@ -5,7 +5,7 @@ plugins {
     kotlin("jvm") version "1.4.30"
 }
 
-group = "org.example"
+group = "com.nkrasko"
 version = "0.0.2"
 
 repositories {
@@ -19,8 +19,7 @@ dependencies {
 // See https://github.com/JetBrains/gradle-intellij-plugin/
 intellij {
     version = "203.7148.57"
-    pluginName = "log-extracts"
-    setPlugins("Jetbrains TeamCity Plugin:2020.2.85695")
+    pluginName = "Log Links Column"
     updateSinceUntilBuild = true
 }
 
@@ -32,7 +31,7 @@ tasks.withType<org.jetbrains.intellij.tasks.PatchPluginXmlTask> {
     )
 
     setSinceBuild("203.0")
-    setUntilBuild("230.*")
+    setUntilBuild("213.*")
 }
 
 allprojects {

@@ -15,7 +15,7 @@ import com.intellij.vcs.log.ui.table.column.VcsLogCustomColumn
 import javax.swing.table.TableCellRenderer
 
 @Suppress("UnstableApiUsage")
-class IssuesCustomColumn : VcsLogCustomColumn<GraphCommitCell> {
+class IssuesLinksColumn : VcsLogCustomColumn<GraphCommitCell> {
     override val id: String = javaClass.canonicalName
     override val isDynamic: Boolean = true
     override val localizedName: String = VcsBundle.message("issue.link.issue.column")

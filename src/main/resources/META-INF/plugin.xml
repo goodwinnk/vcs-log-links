@@ -1,6 +1,6 @@
 <idea-plugin>
     <id>com.nkrasko.log-extracts</id>
-    <name>Log Extracts</name>
+    <name>Log Links Column</name>
     <vendor email="nikolay.krasko@gmail.com">Nikolay Krasko</vendor>
 
     <description>
@@ -13,7 +13,7 @@
     <depends>com.intellij.modules.vcs</depends>
 
     <extensions defaultExtensionNs="com.intellij">
-        <vcsLogCustomColumn implementation="com.nkrasko.extracts.idea.plugin.IssuesCustomColumn"/>
+        <vcsLogCustomColumn implementation="com.nkrasko.extracts.idea.plugin.IssuesLinksColumn"/>
     </extensions>
 
     <actions>

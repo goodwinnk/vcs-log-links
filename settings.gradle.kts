@@ -1,2 +1,10 @@
 rootProject.name = "log-extracts"
 
+pluginManagement {
+    repositories {
+        maven {
+            url = uri("https://oss.sonatype.org/content/repositories/snapshots/")
+        }
+        gradlePluginPortal()
+    }
+}
