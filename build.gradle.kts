@@ -6,7 +6,7 @@ plugins {
 }
 
 group = "com.nkrasko"
-version = "0.0.2"
+version = "0.0.3"
 
 repositories {
     mavenCentral()
@@ -31,7 +31,7 @@ tasks.withType<org.jetbrains.intellij.tasks.PatchPluginXmlTask> {
     )
 
     setSinceBuild("203.0")
-    setUntilBuild("213.*")
+    setUntilBuild("223.*")
 }
 
 allprojects {
