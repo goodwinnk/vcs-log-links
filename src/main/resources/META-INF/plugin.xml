@@ -1,14 +1,13 @@
 <idea-plugin>
-    <id>com.nkrasko.log-extracts</id>
+    <id>com.nkrasko.vcs-log-links</id>
     <name>Log Links Column</name>
     <vendor email="nikolay.krasko@gmail.com">Nikolay Krasko</vendor>
 
     <description>
-        This plugins shows advanced information in VCS log
+        The plugin adds a column into the VCS log with the links found in a commit message.
+        Link search patterns should be pre-configured with the `Issue Navigation` IntelliJ feature.
     </description>
 
-    <!-- please see https://plugins.jetbrains.com/docs/intellij/plugin-compatibility.html
-         on how to target different products -->
     <depends>com.intellij.modules.platform</depends>
     <depends>com.intellij.modules.vcs</depends>
 
