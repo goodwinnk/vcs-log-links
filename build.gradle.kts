@@ -1,12 +1,12 @@
 import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 
 plugins {
-    id("org.jetbrains.intellij") version "0.6.5"
-    kotlin("jvm") version "1.4.30"
+    id("org.jetbrains.intellij") version "1.9.0"
+    kotlin("jvm") version "1.7.0"
 }
 
 group = "com.nkrasko"
-version = "0.0.4"
+version = "0.0.5"
 
 repositories {
     mavenCentral()
@@ -16,29 +16,17 @@ dependencies {
     implementation(kotlin("stdlib"))
 }
 
-// See https://github.com/JetBrains/gradle-intellij-plugin/
+// See https://plugins.jetbrains.com/docs/intellij/tools-gradle-intellij-plugin.html
 intellij {
-    version = "203.7148.57"
-    pluginName = "Log Links Column"
-    updateSinceUntilBuild = true
-}
-
-tasks.withType<org.jetbrains.intellij.tasks.PatchPluginXmlTask> {
-    changeNotes(
-        """
-        Show issue links found anywhere in commit messages in a separate column in the VCS log
-        """.trimIndent()
-    )
-
-    setSinceBuild("203.0")
-    setUntilBuild("223.*")
+    version.set("IC-2022.1.1")
+    pluginName.set("Log Links Column")
 }
 
 allprojects {
     tasks.withType<KotlinCompile>().configureEach {
         kotlinOptions {
             freeCompilerArgs = listOf("-Xjvm-default=enable")
-            jvmTarget = "1.8"
+            jvmTarget = "11"
         }
     }
 }

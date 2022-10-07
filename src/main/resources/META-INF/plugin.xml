@@ -2,10 +2,15 @@
     <id>com.nkrasko.vcs-log-links</id>
     <name>Log Links Column</name>
     <vendor email="nikolay.krasko@gmail.com">Nikolay Krasko</vendor>
+    <idea-version since-build="221.*" until-build="230.*"/>
 
     <description>
+        <![CDATA[
         The plugin adds a column into the VCS log with the links found in a commit message.
-        Link search patterns should be pre-configured with the `Issue Navigation` IntelliJ feature.
+        Link search patterns should be pre-configured with the
+        <a href="https://www.jetbrains.com/help/idea/settings-version-control-issue-navigation.html">Issue Navigation</a>
+        IntelliJ feature.
+        ]]>
     </description>
 
     <depends>com.intellij.modules.platform</depends>
