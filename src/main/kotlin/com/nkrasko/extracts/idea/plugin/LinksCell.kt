@@ -1,6 +1,8 @@
 package com.nkrasko.extracts.idea.plugin
 
-class LinksCell(val links: Collection<Link>) {
+class LinksCell(linksRaw: Collection<Link>) {
+    val links: List<Link> = linksRaw.distinctBy { it.text }.sortedBy { it.text }
+
     class Link(val text: String, val url: String)
 
     companion object {
