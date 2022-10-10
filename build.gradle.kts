@@ -1,4 +1,4 @@
-import org.jetbrains.kotlin.gradle.plugin.mpp.pm20.archivesName
+import org.jetbrains.intellij.tasks.RunIdeTask
 import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 
 plugins {
@@ -23,6 +23,10 @@ intellij {
 
     updateSinceUntilBuild.set(false)
     extensions.getByType(BasePluginExtension::class.java).archivesName.set("vcs-log-links")
+}
+
+tasks.named<RunIdeTask>(org.jetbrains.intellij.IntelliJPluginConstants.RUN_IDE_TASK_NAME) {
+    maxHeapSize = "2048M"
 }
 
 allprojects {
