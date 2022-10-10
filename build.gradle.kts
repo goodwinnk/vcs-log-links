@@ -20,6 +20,8 @@ dependencies {
 intellij {
     version.set("IC-2022.1.1")
     pluginName.set("Log Links Column")
+
+    updateSinceUntilBuild.set(false)
 }
 
 allprojects {

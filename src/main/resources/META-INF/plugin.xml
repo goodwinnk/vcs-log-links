@@ -1,9 +1,11 @@
 <idea-plugin>
     <id>com.nkrasko.vcs-log-links</id>
     <name>Log Links Column</name>
-    <vendor email="nikolay.krasko@gmail.com">Nikolay Krasko</vendor>
+    <vendor url="https://github.com/goodwinnk/vcs-log-links"
+            email="nikolay.krasko@gmail.com">
+        Nikolay Krasko
+    </vendor>
     <idea-version since-build="221.*" until-build="230.*"/>
-
     <description>
         <![CDATA[
         The plugin adds a column into the VCS log with the links found in a commit message.
