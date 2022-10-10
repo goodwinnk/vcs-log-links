@@ -1,3 +1,4 @@
+import org.jetbrains.kotlin.gradle.plugin.mpp.pm20.archivesName
 import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 
 plugins {
@@ -6,7 +7,7 @@ plugins {
 }
 
 group = "com.nkrasko"
-version = "0.0.5"
+version = "0.0.6"
 
 repositories {
     mavenCentral()
@@ -19,9 +20,9 @@ dependencies {
 // See https://plugins.jetbrains.com/docs/intellij/tools-gradle-intellij-plugin.html
 intellij {
     version.set("IC-2022.1.1")
-    pluginName.set("Log Links Column")
 
     updateSinceUntilBuild.set(false)
+    extensions.getByType(BasePluginExtension::class.java).archivesName.set("vcs-log-links")
 }
 
 allprojects {
