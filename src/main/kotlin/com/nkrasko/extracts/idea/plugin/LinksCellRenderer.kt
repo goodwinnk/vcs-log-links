@@ -3,7 +3,6 @@ package com.nkrasko.extracts.idea.plugin
 import com.intellij.ui.ColoredTableCellRenderer
 import com.intellij.ui.SimpleTextAttributes
 import com.intellij.util.ui.JBUI
-import com.intellij.vcs.log.ui.render.GraphCommitCellRenderer
 import com.intellij.vcs.log.ui.table.VcsLogCellRenderer
 import com.intellij.vcs.log.ui.table.VcsLogGraphTable
 import com.intellij.vcs.log.util.VcsLogUiUtil
@@ -13,10 +12,6 @@ import javax.swing.JTable
 import javax.swing.UIManager
 
 class LinksCellRenderer : ColoredTableCellRenderer(), VcsLogCellRenderer {
-    init {
-        cellState = GraphCommitCellRenderer.BorderlessTableCellState()
-    }
-
     override fun customizeCellRenderer(
         table: JTable,
         value: Any?,
@@ -29,9 +24,15 @@ class LinksCellRenderer : ColoredTableCellRenderer(), VcsLogCellRenderer {
             return
         }
 
-        val linkAttributes = getLinkAttributes()
+        val attributes = table.applyHighlighters(this, row, column, hasFocus, selected)
+        var nextLink = false
         for (link in value.links) {
-            append(link.text, linkAttributes, BrowserLauncherTag(link.url))
+            if (nextLink) {
+                append(" ", attributes)
+            } else {
+                nextLink = true
+            }
+            append(link.text, getLinkAttributes(attributes), BrowserLauncherTag(link.url))
         }
     }
 
@@ -42,8 +43,7 @@ class LinksCellRenderer : ColoredTableCellRenderer(), VcsLogCellRenderer {
     }
 
     companion object {
-        private fun getLinkAttributes(): SimpleTextAttributes {
-            val baseStyle = SimpleTextAttributes.REGULAR_ATTRIBUTES
+        private fun getLinkAttributes(baseStyle: SimpleTextAttributes): SimpleTextAttributes {
             val color = baseStyle.fgColor
             val alpha = color?.alpha ?: 255
             val linkColor = JBUI.CurrentTheme.Link.Foreground.ENABLED
