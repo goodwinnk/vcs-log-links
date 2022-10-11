@@ -31,8 +31,14 @@ class LinksColumn: VcsLogCustomColumn<LinksCell> {
             issueNavigationConfiguration.findIssueLinks(fullMessage)
         if (issueLinks.isEmpty()) return LinksCell.EMPTY
 
-        val links = issueLinks.map { match ->
-            LinksCell.Link(fullMessage.substring(match.range.toKotlinRange()), match.targetUrl)
+        val links = issueLinks.mapNotNull { match ->
+            val text = fullMessage.substring(match.range.toKotlinRange())
+            if (text != match.targetUrl) {
+                LinksCell.Link(text, match.targetUrl)
+            } else {
+                // Ignore direct links
+                null
+            }
         }
 
         return LinksCell(links)
