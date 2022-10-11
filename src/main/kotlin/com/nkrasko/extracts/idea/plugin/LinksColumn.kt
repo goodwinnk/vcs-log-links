@@ -5,7 +5,6 @@ import com.intellij.openapi.vcs.IssueNavigationConfiguration
 import com.intellij.openapi.vcs.VcsBundle
 import com.intellij.vcs.log.ui.table.GraphTableModel
 import com.intellij.vcs.log.ui.table.VcsLogGraphTable
-import com.intellij.vcs.log.ui.table.VcsLogStringCellRenderer
 import com.intellij.vcs.log.ui.table.column.VcsLogCustomColumn
 import javax.swing.table.TableCellRenderer
 
