@@ -7,7 +7,7 @@ plugins {
 }
 
 group = "com.nkrasko"
-version = "0.0.8"
+version = "1.0.0"
 
 repositories {
     mavenCentral()
