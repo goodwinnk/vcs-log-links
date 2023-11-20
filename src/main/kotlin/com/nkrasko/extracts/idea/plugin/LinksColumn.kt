@@ -1,6 +1,5 @@
 package com.nkrasko.extracts.idea.plugin
 
-import com.intellij.openapi.util.TextRange
 import com.intellij.openapi.vcs.IssueNavigationConfiguration
 import com.intellij.openapi.vcs.VcsBundle
 import com.intellij.vcs.log.ui.table.GraphTableModel
@@ -31,7 +30,7 @@ class LinksColumn: VcsLogCustomColumn<LinksCell> {
         if (issueLinks.isEmpty()) return LinksCell.EMPTY
 
         val links = issueLinks.mapNotNull { match ->
-            val text = fullMessage.substring(match.range.toKotlinRange())
+            val text = match.range.substring(fullMessage)
             if (text != match.targetUrl) {
                 LinksCell.Link(text, match.targetUrl)
             } else {
@@ -40,10 +39,8 @@ class LinksColumn: VcsLogCustomColumn<LinksCell> {
             }
         }
 
-        return LinksCell(links)
-    }
+        if (links.isEmpty()) return LinksCell.EMPTY
 
-    companion object {
-        private fun TextRange.toKotlinRange(): IntRange = startOffset until endOffset
+        return LinksCell(links)
     }
 }

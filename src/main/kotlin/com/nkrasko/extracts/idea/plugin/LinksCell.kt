@@ -8,4 +8,8 @@ class LinksCell(linksRaw: Collection<Link>) {
     companion object {
         val EMPTY = LinksCell(emptyList())
     }
+
+    override fun toString(): String {
+        return links.joinToString(" ") { it.text }
+    }
 }
